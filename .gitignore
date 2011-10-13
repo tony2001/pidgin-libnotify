@@ -30,3 +30,5 @@ install-sh
 ltmain.sh
 missing
 stamp-h1
+VERSION
+depcomp
