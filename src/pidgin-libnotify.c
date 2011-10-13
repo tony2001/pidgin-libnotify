@@ -56,6 +56,11 @@ get_plugin_pref_frame (PurplePlugin *plugin)
                             "/plugins/gtk/libnotify/newmsg",
                             _("New messages"));
 	purple_plugin_pref_frame_add (frame, ppref);
+	
+	ppref = purple_plugin_pref_new_with_name_and_label (
+                            "/plugins/gtk/libnotify/newmsgtxt",
+                            _("Show new messages text"));
+	purple_plugin_pref_frame_add (frame, ppref);
 
 	ppref = purple_plugin_pref_new_with_name_and_label (
                             "/plugins/gtk/libnotify/newconvonly",
@@ -404,18 +409,25 @@ notify_msg_sent (PurpleAccount *account,
 		return;
 
 	blocked = purple_prefs_get_bool ("/plugins/gtk/libnotify/blocked");
-	if (!purple_privacy_check(account, sender) && blocked)
+	if (blocked && !purple_privacy_check(account, sender))
 		return;
 
 	tr_name = truncate_escape_string (best_name (buddy), 25);
 
-	title = g_strdup_printf (_("%s says:"), tr_name);
-	body = purple_markup_strip_html (message);
+	if (purple_prefs_get_bool("/plugins/gtk/libnotify/newmsgtxt")) {
+		title = g_strdup_printf (_("%s says:"), tr_name);
+		body = purple_markup_strip_html (message);
 
-	notify (title, body, buddy);
+		notify (title, body, buddy);
 
+		g_free (title);
+	} else {
+		title = _("new message received");
+		body = g_strdup_printf (_("from %s"), tr_name);
+
+		notify (title, body, buddy);
+	}
 	g_free (tr_name);
-	g_free (title);
 	g_free (body);
 }
 
@@ -581,6 +593,7 @@ init_plugin (PurplePlugin *plugin)
 
 	purple_prefs_add_none ("/plugins/gtk/libnotify");
 	purple_prefs_add_bool ("/plugins/gtk/libnotify/newmsg", TRUE);
+	purple_prefs_add_bool ("/plugins/gtk/libnotify/newmsgtxt", TRUE);
 	purple_prefs_add_bool ("/plugins/gtk/libnotify/blocked", TRUE);
 	purple_prefs_add_bool ("/plugins/gtk/libnotify/newconvonly", FALSE);
 	purple_prefs_add_bool ("/plugins/gtk/libnotify/signon", TRUE);
