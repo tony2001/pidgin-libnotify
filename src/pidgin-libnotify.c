@@ -75,7 +75,7 @@ get_plugin_pref_frame (PurplePlugin *plugin)
 
 	ppref = purple_plugin_pref_new_with_name_and_label (
                             "/plugins/gtk/libnotify/timeout",
-                            _("Display timeout (msec), disable/enable the plugin for the setting to take effect"));
+                            _("Display timeout (msec)"));
 	purple_plugin_pref_set_bounds(ppref, 100, 100000);
 	purple_plugin_pref_frame_add (frame, ppref);
 
