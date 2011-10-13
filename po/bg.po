@@ -1,0 +1,72 @@
+# Bulgarian (br) translation of pidgin-libnotify
+# Copyright (C) 2007 Dilyan Palauzov
+# This file is distributed under the same license as the PACKAGE package.
+# Dilyan Palauzov <dilyan.palauzov@aegee.org> 2007
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pidgin-libnotify\n"
+"Report-Msgid-Bugs-To: gettext@aegee.org\n"
+"POT-Creation-Date: 2007-06-30 19:58+0000\n"
+"PO-Revision-Date: 2007-12-29 00:00:00+GMT\n"
+"Last-Translator: Dilyan Palauzov <dilyan.palauzov@aegee.org>\n"
+"Language-Team: BULGARIAN <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/pidgin-libnotify.c:57
+msgid "New messages"
+msgstr "Нови съобщения"
+
+#: src/pidgin-libnotify.c:62
+msgid "Only new conversations"
+msgstr "Само нови разговори"
+
+#: src/pidgin-libnotify.c:67
+msgid "Ignore events from blocked users"
+msgstr "Пренебрегвай съобщения от блокирани потребители"
+
+#: src/pidgin-libnotify.c:72
+msgid "Buddy signs on"
+msgstr "Приятел се включи"
+
+#: src/pidgin-libnotify.c:77
+msgid "Buddy signs off"
+msgstr "Приятел се изключи"
+
+#: src/pidgin-libnotify.c:315
+msgid "Show"
+msgstr "Покажи"
+
+#: src/pidgin-libnotify.c:347
+#, c-format
+msgid "%s signed on"
+msgstr "%s се включи"
+
+#: src/pidgin-libnotify.c:379
+#, c-format
+msgid "%s signed off"
+msgstr "%s се изключи"
+
+#: src/pidgin-libnotify.c:406
+#, c-format
+msgid "%s says:"
+msgstr "%s каза:"
+
+#: src/pidgin-libnotify.c:572
+msgid "Libnotify Popups"
+msgstr "Libnotify балони"
+
+#: src/pidgin-libnotify.c:573
+msgid "Displays popups via libnotify."
+msgstr "Показва балони чрез libnotifz"
+
+#: src/pidgin-libnotify.c:574
+msgid ""
+"Pidgin-libnotify:\n"
+"Displays popups via libnotify."
+msgstr ""
+"Pidgin-libnotify:\n"
+"Показва балони чрез libnotify."

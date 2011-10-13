@@ -1,0 +1,141 @@
+2008-12-14  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: really show option to not show
+	notifications when absent.
+
+2007-06-30  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c:
+	* src/pidgin-libnotify.c: rename to pidgin-libnotify.c
+
+2007-06-30  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: fix bug #1657570, don't show multiple
+	notifications for different accounts of the same contact.
+
+2007-06-30  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c:
+	* configure.ac:
+	* Makefile.am:
+	  apply pidgin conversion patch by Colin Guthrie
+
+2007-04-05  Jonh Wendell <wendell@bani.com.br>
+
+	* src/gaim-libnotify.c: fix bug #1648831, don't show
+	notifications when absent, with an option disabled by default.
+
+2006-11-25  Eduardo Perez Ureta <eperez@users.sourceforge.net>
+
+	* configure.ac: intl directory is not needed anymore.
+	* autogen.sh: setup-gettext is deprecated.
+	* setup-gettext: removed (deprecated)
+
+2006-11-17  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: fix i18n framework and include
+	headers. Patch by Eduardo Pérez.
+
+2006-10-22  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: re-add features with gaim-2.0.0-beta4 API
+	support.
+
+2006-09-30  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: comment features out as a workaround for
+	the new API, real fixes coming soon.
+
+2006-06-22  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: fix bug #1491160, Notification When Buddy
+	Logs Out, with an option disabled by default.
+
+2006-06-22  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: fix bug #1492483, Empty string on weird
+	characters by escaping and (as a bonus) truncating the name on the
+	title.
+
+2006-04-28  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: workaround for libnotify API strangeness:
+	we have to call notification_show() after an update.
+
+2006-04-11  Steve Frécinaux <steve@istique.net>
+
+	* src/gaim-libnotify.c: Let the GtkPixbufLoader detect the image
+	type by itself (fixes crash).
+
+2006-03-30  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: adapt to gaim-2.0.0-beta3 API.
+
+2006-02-10  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: fix bug truncating string in middle of a
+	utf-8 character.
+
+2006-02-10  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: use g_object_unref() instead of g_free()
+	to free the pixbuf_loader, fixes crash (I hope).
+
+2006-02-10  Carl van Tonder <carlishere@hotmail.com>
+
+	* src/gaim-libnotify.c: Add preference: blocked - ignore signon
+	and message events from blocked buddies.
+
+2006-03-02  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: escape messages so that it works when
+	messages have '<' or '>' characters.
+
+2006-02-27  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: Refactor of icon code, [s|g]et_user_data
+	converted to gobject_[s|g]et_data. Untested. Icons work again!
+
+2006-02-26  Carl Van Tonder <carlishere@hotmail.com>
+
+	* src/gaim-libnotify.c: Add Preferences: newmsg, convonly and
+	signon.
+
+2005-12-24  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: Update to libnotify 0.3.x and gaim 2.0.0
+
+2005-07-09  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: Add hash_table for buddies, so that the
+	same handle is used for the same buddy.
+
+2005-07-09  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: Add avatar support with help from Ezequiel
+	Pérez.
+
+2005-07-09  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* configure.ac:
+	* Makefile.am:
+	* setup-gettext:
+	* src/gaim-libnotify.c:
+	* src/gln-intl.h:
+	* intl:
+	* po:
+	* po/ChangeLog:
+	  Add i18n support to gaim-libnotify, based on patch from Ezequiel
+	  Pérez
+	* autogen.sh:
+	  Add i18n support, taken from guifications
+
+2005-07-08  Duarte Henriques <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: (notify_cb): Adapted from patch by
+	Ezequiel Pérez to provide an action callback - opens the
+	conversation.  Thanks Ezequiel!
+
+2005-07-07  Duarte Henriques  <duarte.henriques@gmail.com>
+
+	* src/gaim-libnotify.c: Adapt to new libnotify API.

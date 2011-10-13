@@ -1,0 +1,75 @@
+# Russian (ru) translation of gaim-libnotify.
+# Copyright (C) 2007, Dmitry Egorkin <egorkin@gmail.com>
+#
+# This file is distributed under the same license as gaim-libnotify.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gaim-libnotify\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-30 19:58+0000\n"
+"PO-Revision-Date: 2007-11-29 12:30-0300\n"
+"Last-Translator: Dmitry Egorkin <egorkin@gmail.com>\n"
+"Language-Team: Russian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/pidgin-libnotify.c:57
+msgid "New messages"
+msgstr "Новые сообщения"
+
+#: src/pidgin-libnotify.c:62
+msgid "Only new conversations"
+msgstr "Только для новых собеседников"
+
+#: src/pidgin-libnotify.c:67
+msgid "Ignore events from blocked users"
+msgstr "Игнорировать заблокированных пользователей"
+
+#: src/pidgin-libnotify.c:72
+msgid "Buddy signs on"
+msgstr "Пользователь приходит"
+
+#: src/pidgin-libnotify.c:77
+msgid "Buddy signs off"
+msgstr "Пользователь уходит"
+
+#: src/pidgin-libnotify.c:315
+msgid "Show"
+msgstr "Показать"
+
+#: src/pidgin-libnotify.c:347
+#, c-format
+msgid "%s signed on"
+msgstr "%s пришёл"
+
+#: src/pidgin-libnotify.c:379
+#, c-format
+msgid "%s signed off"
+msgstr "%s ушёл"
+
+#: src/pidgin-libnotify.c:406
+#, c-format
+msgid "%s says:"
+msgstr "%s пишет:"
+
+#: src/pidgin-libnotify.c:572
+msgid "Libnotify Popups"
+msgstr "Показывать всплывающие сообщения"
+
+#: src/pidgin-libnotify.c:573
+msgid "Displays popups via libnotify."
+msgstr "Показывать новые сообщения всплывающими в трее."
+
+#: src/pidgin-libnotify.c:574
+msgid ""
+"Pidgin-libnotify:\n"
+"Displays popups via libnotify."
+msgstr ""
+"Pidgin-libnotify:\n"
+"Показывать всплывающие сообщения в трее, используя libnotify."
+
+#~ msgid "Libnotify Interface"
+#~ msgstr "Настройки libnotify"

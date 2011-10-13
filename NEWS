@@ -1,0 +1,101 @@
+0.14
+==
+
+* really add option: don't show notifications when absent
+* Updated polish translation (Piotr Drąg)
+* Added russian translation (Dmitry Egorkin)
+* Added bulgarian translation (Dilyan Palauzov)
+* Added german translation (Marc Mikolits)
+* Added swedish translation (Jonas Granqvist)
+
+0.13
+==
+
+* rename to pidgin-libnotify
+* adapt to purple and pidgin API (Colin Guthrie)
+* add option: don't show notifications when absent (John Wendell)
+* don't show multiple notifications for the same contact (Duarte Henriques)
+* Fix include headers and i18n framework (Eduardo Pérez)
+* Add slovenian translation (Matic Zgur)
+* Add chinese translation (Tao Wei)
+* Add romanian translation (Ion Alyn)
+* Add galician translation (Ignacio Casal Quinteiro)
+* Update italian translation (Marco Cabizza)
+
+0.12
+==
+
+* Adapt to gaim-2.0.0-beta4 API
+
+0.11
+==
+
+* Add french translation by Ersplus
+* Add brazilian portuguese translation by Everson Araujo
+* Add option to show notification when a buddy logs out
+* Fix bug where buddy names with xml characters were not shown
+
+0.10
+==
+
+* Fix crasher with some icons (Steve Frécinaux)
+* Workaround/bug fix: messages weren't updated (Duarte Henriques)
+
+0.9
+==
+
+* Add polish translation by Krzysztof Rosiński
+* Add dutch translation by Raymond Jelierse
+* Adapt to gaim-2.0.0beta3 API
+* Fix crasher bug caused by blindly splitting utf-8 strings
+* There's a problem with icons on libnotify and dbus 0.61, please use dbus 0.60
+* The white background of the clock over the yellow background is a problem that lies with notification-daemon on ubuntu
+
+0.8
+==
+
+* Fix bug where messages with '<' and '>' didn't appear (Duarte Henriques)
+* Add italian translation by Marco Cabizza
+* Add preference (on by default) to not show notifications for blocked contacts (Carl van Tonder)
+* Fix crasher bug with displaying buddy icons (Duarte Henriques)
+
+0.7
+==
+
+* New preferences (Carl van Tonder)
+* Icons and actions work again (Duarte Henriques)
+
+0.6
+==
+
+* Update to libnotify 0.3.x and gaim 2.0.0
+* Icon lost due to libnotify buggyness
+
+0.5
+==
+
+* Use same notification for same buddy.
+* Add avatar support with help from Ezequiel Pérez.
+
+0.4
+==
+
+* Add i18n framework based on patch by Ezequiel Pérez and Guifications code
+* Add es translation (Ezequiel Pérez)
+* Add pt translation (Duarte Henriques)
+
+0.3
+==
+
+Now opens the conversation when the notification is clicked, thanks
+to Ezequiel Pérez.
+
+0.2
+==
+
+Update to new libnotify API.
+
+0.1
+==
+
+Initial release.

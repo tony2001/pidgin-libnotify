@@ -1,0 +1,73 @@
+# translation of gl.po to Galego
+# Copyright (C) 2007
+# This file is distributed under the same license as the pidgin-libnotify package.
+#
+# Ignacio Casal Quinteiro <icq@cvs.gnome.org>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: gl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-30 19:58+0000\n"
+"PO-Revision-Date: 2007-05-31 19:32+0200\n"
+"Last-Translator: Ignacio Casal Quinteiro <icq@cvs.gnome.org>\n"
+"Language-Team: Galego <proxecto@trasno.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/pidgin-libnotify.c:57
+msgid "New messages"
+msgstr "Mensaxes novas"
+
+#: src/pidgin-libnotify.c:62
+msgid "Only new conversations"
+msgstr "Só novas conversas"
+
+#: src/pidgin-libnotify.c:67
+msgid "Ignore events from blocked users"
+msgstr "Ignorar eventos de usuarios bloqueados"
+
+#: src/pidgin-libnotify.c:72
+msgid "Buddy signs on"
+msgstr "Contactos que se conectan"
+
+#: src/pidgin-libnotify.c:77
+msgid "Buddy signs off"
+msgstr "Contactos que se desconectan"
+
+#: src/pidgin-libnotify.c:315
+msgid "Show"
+msgstr "Mostrar"
+
+#: src/pidgin-libnotify.c:347
+#, c-format
+msgid "%s signed on"
+msgstr "%s conectouse"
+
+#: src/pidgin-libnotify.c:379
+#, c-format
+msgid "%s signed off"
+msgstr "%s desconectouse"
+
+#: src/pidgin-libnotify.c:406
+#, c-format
+msgid "%s says:"
+msgstr "%s di:"
+
+#: src/pidgin-libnotify.c:572
+msgid "Libnotify Popups"
+msgstr "Emerxentes de libnotify"
+
+#: src/pidgin-libnotify.c:573
+msgid "Displays popups via libnotify."
+msgstr "Mostra emerxentes por medio de libnotify."
+
+#: src/pidgin-libnotify.c:574
+#, fuzzy
+msgid ""
+"Pidgin-libnotify:\n"
+"Displays popups via libnotify."
+msgstr ""
+"Gaim-libnotify:\n"
+"Mostra emerxentes por medio de libnotify."

@@ -1,0 +1,73 @@
+# Brazilian Portuguese (pt_BR) translation of gaim-libnotify.
+# This file is distributed under the same license as gaim-libnotify.
+# Duarte Henriques <duarte.henriques@gmail.com>, 2006.
+# Everson Araujo <everson@por.com.br>, 2006.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: gaim-libnotify\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-30 19:58+0000\n"
+"PO-Revision-Date: 2006-06-21 19:06-0300\n"
+"Last-Translator: Everson -NoBIOS- Santos Araujo <everson@por.com.br>\n"
+"Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipsga.org.br>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/pidgin-libnotify.c:57
+msgid "New messages"
+msgstr "Novas mensagens"
+
+#: src/pidgin-libnotify.c:62
+msgid "Only new conversations"
+msgstr "Apenas novas conversações"
+
+#: src/pidgin-libnotify.c:67
+msgid "Ignore events from blocked users"
+msgstr "Ignorar eventos de usuários bloqueados"
+
+#: src/pidgin-libnotify.c:72
+msgid "Buddy signs on"
+msgstr "Amigo conecta"
+
+#: src/pidgin-libnotify.c:77
+msgid "Buddy signs off"
+msgstr "Amigo desconecta"
+
+#: src/pidgin-libnotify.c:315
+msgid "Show"
+msgstr "Mostrar"
+
+#: src/pidgin-libnotify.c:347
+#, c-format
+msgid "%s signed on"
+msgstr "%s conectou"
+
+#: src/pidgin-libnotify.c:379
+#, c-format
+msgid "%s signed off"
+msgstr "%s desconectou"
+
+#: src/pidgin-libnotify.c:406
+#, c-format
+msgid "%s says:"
+msgstr "%s diz:"
+
+#: src/pidgin-libnotify.c:572
+msgid "Libnotify Popups"
+msgstr "Popups Libnotify"
+
+#: src/pidgin-libnotify.c:573
+msgid "Displays popups via libnotify."
+msgstr "Mostra popups via libnotify."
+
+#: src/pidgin-libnotify.c:574
+#, fuzzy
+msgid ""
+"Pidgin-libnotify:\n"
+"Displays popups via libnotify."
+msgstr ""
+"Gaim-libnotify:\n"
+"Mostra popups via libnotify."

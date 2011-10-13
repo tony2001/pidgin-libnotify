@@ -1,0 +1,76 @@
+# Slovenian (sl) translation of gaim-libnotify.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gaim-libnotify package.
+#
+# Matic Žgur <mr.zgur@gmail.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gaim-libnotify\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-30 19:58+0000\n"
+"PO-Revision-Date: 2006-11-16 18:11+0100\n"
+"Last-Translator: Matic Žgur <mr.zgur@gmail.com>\n"
+"Language-Team: Slovenian <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Poedit-Language: Slovenian\n"
+
+#: src/pidgin-libnotify.c:57
+msgid "New messages"
+msgstr "Nova sporočila"
+
+#: src/pidgin-libnotify.c:62
+msgid "Only new conversations"
+msgstr "Samo novi pogovori"
+
+#: src/pidgin-libnotify.c:67
+msgid "Ignore events from blocked users"
+msgstr "Prezri dogodke pri blokiranih uporabnikih"
+
+#: src/pidgin-libnotify.c:72
+msgid "Buddy signs on"
+msgstr "Prijatelj se prijavi"
+
+#: src/pidgin-libnotify.c:77
+msgid "Buddy signs off"
+msgstr "Prijatelj se odjavi"
+
+#: src/pidgin-libnotify.c:315
+msgid "Show"
+msgstr "Prikaži"
+
+#: src/pidgin-libnotify.c:347
+#, c-format
+msgid "%s signed on"
+msgstr "%s se je prijavil/a"
+
+#: src/pidgin-libnotify.c:379
+#, c-format
+msgid "%s signed off"
+msgstr "%s se je odjavil/a"
+
+#: src/pidgin-libnotify.c:406
+#, c-format
+msgid "%s says:"
+msgstr "%s pravi:"
+
+#: src/pidgin-libnotify.c:572
+msgid "Libnotify Popups"
+msgstr "Pojavna okna libnotify"
+
+#: src/pidgin-libnotify.c:573
+msgid "Displays popups via libnotify."
+msgstr "Prikaže pojavna okna preko libnotify."
+
+#: src/pidgin-libnotify.c:574
+#, fuzzy
+msgid ""
+"Pidgin-libnotify:\n"
+"Displays popups via libnotify."
+msgstr ""
+"Gaim-libnotify:\n"
+"Prikaže pojavna okna preko libnotify."

@@ -1,0 +1,76 @@
+# Chinese(zh_CN) translation of gaim-libnotify.
+# Copyright (C) 2006, Tao WEI <weitao1979@gmail.com>
+# This file is distributed under the same license as gaim-libnotify.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: gaim-libnotify\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-30 19:58+0000\n"
+"PO-Revision-Date: 2007-01-03 21:45+0100\n"
+"Last-Translator: Tao WEI <weitao1979@gmail.com>\n"
+"Language-Team: chinese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/pidgin-libnotify.c:57
+msgid "New messages"
+msgstr "新的信息"
+
+#: src/pidgin-libnotify.c:62
+msgid "Only new conversations"
+msgstr "只有新的对话"
+
+#: src/pidgin-libnotify.c:67
+msgid "Ignore events from blocked users"
+msgstr "忽略来自屏蔽用户的事件"
+
+#: src/pidgin-libnotify.c:72
+msgid "Buddy signs on"
+msgstr "好友登入"
+
+#: src/pidgin-libnotify.c:77
+msgid "Buddy signs off"
+msgstr "好友登出"
+
+#: src/pidgin-libnotify.c:315
+msgid "Show"
+msgstr "显示"
+
+#: src/pidgin-libnotify.c:347
+#, c-format
+msgid "%s signed on"
+msgstr "%s 登入了"
+
+#: src/pidgin-libnotify.c:379
+#, c-format
+msgid "%s signed off"
+msgstr "%s 登出了"
+
+#: src/pidgin-libnotify.c:406
+#, c-format
+msgid "%s says:"
+msgstr "%s 说："
+
+#: src/pidgin-libnotify.c:572
+msgid "Libnotify Popups"
+msgstr "Libnotify 弹出对话框"
+
+#: src/pidgin-libnotify.c:573
+msgid "Displays popups via libnotify."
+msgstr "通过 libnotify 来显示弹出对话框。"
+
+#: src/pidgin-libnotify.c:574
+#, fuzzy
+msgid ""
+"Pidgin-libnotify:\n"
+"Displays popups via libnotify."
+msgstr ""
+"Gaim-libnotify:\n"
+"通过 libnotify 来显示弹出对话框。"
+
+#~ msgid "Libnotify Interface"
+#~ msgstr "Libnotify 界面"

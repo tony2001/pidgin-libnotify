@@ -1,0 +1,76 @@
+# translation of ro.po to
+# translation of gaim-libnotify.po to
+# Copyright (C) 2007
+# This file is distributed under the same license as the pidgin-libnotify package.
+#
+# Ion Alin <alyn3d@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: ro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-30 19:58+0000\n"
+"PO-Revision-Date: 2007-01-25 22:00+0200\n"
+"Last-Translator: Ion Alin <alyn3d@gmail.com>\n"
+"Language-Team:  <ro@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+
+#: src/pidgin-libnotify.c:57
+msgid "New messages"
+msgstr "Mesaje noi"
+
+#: src/pidgin-libnotify.c:62
+msgid "Only new conversations"
+msgstr "Numai conversatii noi"
+
+#: src/pidgin-libnotify.c:67
+msgid "Ignore events from blocked users"
+msgstr "Ignora evenimentele de la utilizatorii blocati"
+
+#: src/pidgin-libnotify.c:72
+msgid "Buddy signs on"
+msgstr "Userul este online"
+
+#: src/pidgin-libnotify.c:77
+msgid "Buddy signs off"
+msgstr "Userul este offline"
+
+#: src/pidgin-libnotify.c:315
+msgid "Show"
+msgstr "Arata"
+
+#: src/pidgin-libnotify.c:347
+#, c-format
+msgid "%s signed on"
+msgstr "%s este online"
+
+#: src/pidgin-libnotify.c:379
+#, c-format
+msgid "%s signed off"
+msgstr "%s este offline"
+
+#: src/pidgin-libnotify.c:406
+#, c-format
+msgid "%s says:"
+msgstr "%s spune:"
+
+#: src/pidgin-libnotify.c:572
+msgid "Libnotify Popups"
+msgstr "Pop-up Libnotify"
+
+#: src/pidgin-libnotify.c:573
+msgid "Displays popups via libnotify."
+msgstr "Arata popup-uri via libnotify."
+
+#: src/pidgin-libnotify.c:574
+#, fuzzy
+msgid ""
+"Pidgin-libnotify:\n"
+"Displays popups via libnotify."
+msgstr ""
+"Gaim-libnotify:\n"
+"Arata popup-uri via libnotify."
