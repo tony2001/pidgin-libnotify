@@ -312,6 +312,7 @@ notify (const gchar *title,
 	g_hash_table_insert (buddy_hash, contact, notification);
 
 	g_object_set_data (G_OBJECT(notification), "contact", contact);
+	g_object_set_data (G_OBJECT(notification), "buddy", buddy);
 
 	g_signal_connect (notification, "closed", G_CALLBACK(closed_cb), NULL);
 
