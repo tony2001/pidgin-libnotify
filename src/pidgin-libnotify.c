@@ -281,6 +281,7 @@ notify (const gchar *title,
 	PurpleBuddyIcon *buddy_icon;
 	gchar *tr_body;
 	PurpleContact *contact;
+	PurpleConversation *conv = NULL;
 
 	contact = purple_buddy_get_contact (buddy);
 
@@ -288,6 +289,15 @@ notify (const gchar *title,
 		tr_body = truncate_escape_string (body, 60);
 	else
 		tr_body = NULL;
+
+	conv = purple_find_conversation_with_account (PURPLE_CONV_TYPE_ANY, buddy->name, buddy->account);
+
+	if (conv && conv->ui_ops && conv->ui_ops->has_focus) {
+	    if (conv->ui_ops->has_focus(conv) == TRUE) {
+		/* do not notify if the conversation is currently in focus */
+		return;
+	    }
+	}
 
 	notification = g_hash_table_lookup (buddy_hash, contact);
 
