@@ -68,7 +68,8 @@ AC_SUBST(CFLAGS)
 # Check for libnotify
 #
 
-PKG_CHECK_MODULES(LIBNOTIFY, libnotify >= 0.3.2)
+PKG_CHECK_MODULES([LIBNOTIFY], libnotify >= 0.3.2)
+PKG_CHECK_MODULES([LIBNOTIFY07], libnotify >= 0.7, [AC_DEFINE([LIBNOTIFY_07], 1, [libnotify 0.7 or newer is detected])], [ libnotify=old ])
 
 AC_SUBST(LIBNOTIFY_CFLAGS)
 AC_SUBST(LIBNOTIFY_LIBS)
