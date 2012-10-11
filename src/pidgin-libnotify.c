@@ -62,12 +62,6 @@ get_plugin_pref_frame (PurplePlugin *plugin)
                             _("Show new messages text"));
 	purple_plugin_pref_frame_add (frame, ppref);
 
-	ppref = purple_plugin_pref_new_with_name_and_label (
-                            "/plugins/gtk/libnotify/newmsgtxt",
-                            _("Show new messages text"));
-	purple_plugin_pref_frame_add (frame, ppref);
-
-
 	if (purple_prefs_get_int("/plugins/gtk/libnotify/timeout") == 0) {
 		/* 3 seconds is the default timeout */
 		purple_prefs_set_int("/plugins/gtk/libnotify/timeout", 3000);
