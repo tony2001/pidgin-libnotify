@@ -62,6 +62,11 @@ get_plugin_pref_frame (PurplePlugin *plugin)
                             _("Show new messages text"));
 	purple_plugin_pref_frame_add (frame, ppref);
 
+	ppref = purple_plugin_pref_new_with_name_and_label (
+                            "/plugins/gtk/libnotify/othermsgs",
+                            _("Show all messages in chat rooms"));
+	purple_plugin_pref_frame_add (frame, ppref);
+
 	if (purple_prefs_get_int("/plugins/gtk/libnotify/timeout") == 0) {
 		/* 3 seconds is the default timeout */
 		purple_prefs_set_int("/plugins/gtk/libnotify/timeout", 3000);
@@ -543,7 +548,7 @@ notify_chat_nick (PurpleAccount *account,
 	if (nick && !strcmp (sender, nick))
 		return;
 
-	if (!g_strstr_len (message, strlen(message), nick))
+	if (!g_strstr_len(message, strlen(message), nick) && !purple_prefs_get_bool("/plugins/gtk/libnotify/othermsgs"))
 		return;
 
 	notify_msg_sent (account, conv, sender, message);
@@ -669,6 +674,7 @@ init_plugin (PurplePlugin *plugin)
 	purple_prefs_add_none ("/plugins/gtk/libnotify");
 	purple_prefs_add_bool ("/plugins/gtk/libnotify/newmsg", TRUE);
 	purple_prefs_add_bool ("/plugins/gtk/libnotify/newmsgtxt", TRUE);
+	purple_prefs_add_bool ("/plugins/gtk/libnotify/othermsgs", TRUE);
 	purple_prefs_add_bool ("/plugins/gtk/libnotify/blocked", TRUE);
 	purple_prefs_add_bool ("/plugins/gtk/libnotify/newconvonly", FALSE);
 	purple_prefs_add_bool ("/plugins/gtk/libnotify/signon", TRUE);
