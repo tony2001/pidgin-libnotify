@@ -313,10 +313,12 @@ notify (const gchar *title,
 		conv = purple_find_conversation_with_account (PURPLE_CONV_TYPE_ANY, buddy->name, buddy->account);
 
 	if (conv && conv->ui_ops && conv->ui_ops->has_focus) {
-	    if (conv->ui_ops->has_focus(conv) == TRUE) {
-		/* do not notify if the conversation is currently in focus */
-		return;
-	    }
+#ifndef DEBUG /* in debug mode, always show notifications */
+		if (conv->ui_ops->has_focus(conv) == TRUE) {
+			purple_debug_info (PLUGIN_ID, "Conversation has focus 0x%lx\n", (unsigned long)conv);
+			return;
+		}
+#endif
 	}
 
 	if (contact)
