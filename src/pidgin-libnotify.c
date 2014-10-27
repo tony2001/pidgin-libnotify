@@ -42,6 +42,9 @@
 
 #define PLUGIN_ID "pidgin-libnotify"
 
+#define DELIMS " "
+static char **words;
+
 static GHashTable *buddy_hash;
 
 static PurplePluginPrefFrame *
@@ -60,6 +63,11 @@ get_plugin_pref_frame (PurplePlugin *plugin)
 	ppref = purple_plugin_pref_new_with_name_and_label (
                             "/plugins/gtk/libnotify/newmsgtxt",
                             _("Show new messages text"));
+	purple_plugin_pref_frame_add (frame, ppref);
+
+	ppref = purple_plugin_pref_new_with_name_and_label (
+                            "/plugins/gtk/libnotify/triggerMessages",
+                            _("Show messages with these trigger words"));
 	purple_plugin_pref_frame_add (frame, ppref);
 
 	ppref = purple_plugin_pref_new_with_name_and_label (
@@ -313,10 +321,12 @@ notify (const gchar *title,
 		conv = purple_find_conversation_with_account (PURPLE_CONV_TYPE_ANY, buddy->name, buddy->account);
 
 	if (conv && conv->ui_ops && conv->ui_ops->has_focus) {
-	    if (conv->ui_ops->has_focus(conv) == TRUE) {
-		/* do not notify if the conversation is currently in focus */
-		return;
-	    }
+#ifndef DEBUG /* in debug mode, always show notifications */
+		if (conv->ui_ops->has_focus(conv) == TRUE) {
+			purple_debug_info (PLUGIN_ID, "Conversation has focus 0x%lx\n", (unsigned long)conv);
+			return;
+		}
+#endif
 	}
 
 	if (contact)
@@ -536,6 +546,13 @@ notify_new_message_cb (PurpleAccount *account,
 }
 
 static void
+construct_list()
+{
+	g_strfreev(words);
+	words = g_strsplit_set(purple_prefs_get_string("/plugins/gtk/libnotify/triggerMessages"), DELIMS, -1);
+}
+
+static void
 notify_chat_nick (PurpleAccount *account,
 				  const gchar *sender,
 				  const gchar *message,
@@ -545,10 +562,27 @@ notify_chat_nick (PurpleAccount *account,
 	gchar *nick;
 
 	nick = (gchar *)purple_conv_chat_get_nick (PURPLE_CONV_CHAT(conv));
+#ifndef DEBUG /* in debug mode, always show notifications */
 	if (nick && !strcmp (sender, nick))
 		return;
+#else
+	purple_debug_info (PLUGIN_ID, "Message would be suppressed normally because you said it yourself");
+#endif
 
-	if (!g_strstr_len(message, strlen(message), nick) && !purple_prefs_get_bool("/plugins/gtk/libnotify/othermsgs"))
+	int triggermessagefound = 0;
+	int i;
+	for (i = 0; words[i]; i++  ) {
+		if (g_strstr_len(message, strlen(message), words[i])) {
+			triggermessagefound=1;
+			purple_debug_info (PLUGIN_ID, "found triggermessage in chat");
+			break;
+		}
+	}
+	if (!triggermessagefound){
+		purple_debug_info (PLUGIN_ID, "no triggermessage found in chat");
+	}
+
+	if (!triggermessagefound && !g_strstr_len(message, strlen(message), nick) && !purple_prefs_get_bool("/plugins/gtk/libnotify/othermsgs"))
 		return;
 
 	notify_msg_sent (account, conv, sender, message);
@@ -558,6 +592,8 @@ static gboolean
 plugin_load (PurplePlugin *plugin)
 {
 	void *conv_handle, *blist_handle, *conn_handle;
+
+	construct_list();
 
 	if (!notify_is_initted () && !notify_init ("Pidgin")) {
 		purple_debug_error (PLUGIN_ID, "libnotify not running!\n");
@@ -585,6 +621,8 @@ plugin_load (PurplePlugin *plugin)
 	purple_signal_connect (conv_handle, "deleting-conversation", plugin,
 						PURPLE_CALLBACK(notify_deleting_conversation_cb), NULL);
 
+	purple_prefs_connect_callback(plugin, "/plugins/gtk/libnotify/triggerMessages",
+					(PurplePrefCallback)construct_list, NULL);
 
 	/* used just to not display the flood of guifications we'd get */
 	purple_signal_connect (conn_handle, "signed-on", plugin,
@@ -674,6 +712,7 @@ init_plugin (PurplePlugin *plugin)
 	purple_prefs_add_none ("/plugins/gtk/libnotify");
 	purple_prefs_add_bool ("/plugins/gtk/libnotify/newmsg", TRUE);
 	purple_prefs_add_bool ("/plugins/gtk/libnotify/newmsgtxt", TRUE);
+	purple_prefs_add_string ("/plugins/gtk/libnotify/triggerMessages", "");
 	purple_prefs_add_bool ("/plugins/gtk/libnotify/othermsgs", TRUE);
 	purple_prefs_add_bool ("/plugins/gtk/libnotify/blocked", TRUE);
 	purple_prefs_add_bool ("/plugins/gtk/libnotify/newconvonly", FALSE);
