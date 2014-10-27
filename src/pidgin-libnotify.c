@@ -547,8 +547,12 @@ notify_chat_nick (PurpleAccount *account,
 	gchar *nick;
 
 	nick = (gchar *)purple_conv_chat_get_nick (PURPLE_CONV_CHAT(conv));
+#ifndef DEBUG /* in debug mode, always show notifications */
 	if (nick && !strcmp (sender, nick))
 		return;
+#else
+	purple_debug_info (PLUGIN_ID, "Message would be suppressed normally because you said it yourself");
+#endif
 
 	if (!g_strstr_len(message, strlen(message), nick) && !purple_prefs_get_bool("/plugins/gtk/libnotify/othermsgs"))
 		return;
